@@ -1,4 +1,5 @@
 import requests
+import send_email
 
 #url of newsapi.org
 url="https://newsapi.org/v2/everything?q=tesla&from=2023-01-28&sortBy=publishedAt&apiKey=49c747a1260e447bba1b4a53c6dbd224"
@@ -9,6 +10,12 @@ request=requests.get(url)
 #content=request.text
 #Data obtained in json format
 content=request.json();
+msg=""
 #access title
 for article in content["articles"]:
-    print(article["title"])
+    #print(article["title"])
+    msg=msg+article["title"]+"\n"
+
+#Convert entire message to utf-8 to get rid of UnicodeEncodeError
+msg=msg.encode(encoding='utf-8' )
+send_email.send_email(msg)
