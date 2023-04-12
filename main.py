@@ -2,7 +2,7 @@ import requests
 import send_email
 
 #url of newsapi.org
-url="https://newsapi.org/v2/everything?q=tesla&from=2023-04-10&sortBy=publishedAt&apiKey=49c747a1260e447bba1b4a53c6dbd224"
+url="https://newsapi.org/v2/everything?q=tesla&from=2023-04-10&sortBy=publishedAt&apiKey=49c747a1260e447bba1b4a53c6dbd224&language=en"
 api_key="49c747a1260e447bba1b4a53c6dbd224"
 #send request to url
 request=requests.get(url)
