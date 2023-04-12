@@ -12,7 +12,7 @@ request=requests.get(url)
 content=request.json();
 msg=""
 #access title
-for article in content["articles"]:
+for article in content["articles"][:20]:  #only 20 articles
     if article["title"] is not None:
         #print(article["title"])
         msg=msg + article["title"] + "\n" \
